@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Intern Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Intern Dashboard</h1>
+
+  <section>
+    <h2>Assign Task (Admin)</h2>
+    <form id="taskForm">
+      <input type="text" id="title" placeholder="Task Title" required>
+      <input type="text" id="description" placeholder="Description" required>
+      <input type="text" id="internId" placeholder="Intern ID" required>
+      <button type="submit">Assign</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>All Tasks</h2>
+    <div id="taskList"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
