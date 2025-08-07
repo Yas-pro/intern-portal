@@ -1,5 +1,7 @@
+const BASE_URL = 'https://intern-portal-ro6n.onrender.com';
+
 async function loadTasks() {
-  const res = await fetch('http://localhost:5000/api/tasks');
+  const res = await fetch(`${BASE_URL}/api/tasks`);
   const tasks = await res.json();
 
   const taskList = document.getElementById('taskList');
@@ -24,7 +26,7 @@ async function loadTasks() {
 async function updateStatus(event) {
   const id = event.target.dataset.id;
   const status = event.target.value;
-  await fetch('http://localhost:5000/api/tasks/' + id, {
+  await fetch(`${BASE_URL}/api/tasks/${id}`, {
     method: 'PUT',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({ status })
@@ -38,7 +40,7 @@ document.getElementById('taskForm').addEventListener('submit', async (e) => {
   const description = document.getElementById('description').value;
   const internId = document.getElementById('internId').value;
 
-  await fetch('http://localhost:5000/api/tasks', {
+  await fetch(`${BASE_URL}/api/tasks`, {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({ title, description, internId })
